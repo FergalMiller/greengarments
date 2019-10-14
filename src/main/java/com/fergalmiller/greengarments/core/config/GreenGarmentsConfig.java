@@ -1,4 +1,4 @@
-package com.fergalmiller.greengarments.config;
+package com.fergalmiller.greengarments.core.config;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -10,8 +10,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class GreenGarmentsConfig {
 
     @Bean
+    @SuppressWarnings("unchecked")
     public ServletRegistrationBean adminServlet(){
-        ServletRegistrationBean registrationBean = new ServletRegistrationBean( new org.h2.server.web.WebServlet());
+        final ServletRegistrationBean registrationBean = new ServletRegistrationBean(new org.h2.server.web.WebServlet());
         registrationBean.addUrlMappings("/admin/*");
         return registrationBean;
     }
