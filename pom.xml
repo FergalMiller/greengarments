@@ -44,11 +44,12 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>ord.apache.tomcat.embed</groupId>
+			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
-			<version>unknown</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!--Misc-->
@@ -63,7 +64,12 @@
 			<version>17.0.0</version>
 			<scope>compile</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.6-jre</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
