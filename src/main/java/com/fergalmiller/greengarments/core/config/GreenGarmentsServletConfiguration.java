@@ -12,13 +12,18 @@ import com.fergalmiller.greengarments.GreengarmentsApplication;
 
 public class GreenGarmentsServletConfiguration implements WebApplicationInitializer
 {
-    public void onStartup(@Nonnull ServletContext servletContext)
+    public void onStartup(@Nonnull final ServletContext servletContext)
     {
-        AnnotationConfigWebApplicationContext webApplicationContext = new AnnotationConfigWebApplicationContext();
+        final AnnotationConfigWebApplicationContext webApplicationContext =
+                new AnnotationConfigWebApplicationContext();
         webApplicationContext.register(GreengarmentsApplication.class);
         webApplicationContext.setServletContext(servletContext);
-        ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(webApplicationContext));
+
+        final ServletRegistration.Dynamic servlet =
+                servletContext.addServlet("dispatcher", new DispatcherServlet(webApplicationContext));
         servlet.setLoadOnStartup(1);
         servlet.addMapping("/");
     }
+
+    
 }

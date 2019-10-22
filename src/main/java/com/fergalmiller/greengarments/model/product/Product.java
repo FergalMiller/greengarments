@@ -1,57 +1,62 @@
 package com.fergalmiller.greengarments.model.product;
 
-import com.fergalmiller.greengarments.model.outlet.Outlet;
-import com.fergalmiller.greengarments.model.product.size.Size;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import org.jetbrains.annotations.Contract;
+
+import com.fergalmiller.greengarments.model.product.category.Category;
+import com.fergalmiller.greengarments.model.product.size.Size;
 
 @Entity
 public class Product {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long serialNo;
+
+    private String brand;
+
+    @Column(name = "product_name")
+    private String productName;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Size size;
 
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
-    @JoinColumn(name = "store_id", nullable = false)
-    @NotNull
-    private Outlet store;
+    @Enumerated(EnumType.STRING)
+    private Category category;
 
-    @Column(name = "in_transit", nullable = false)
-    private boolean inTransit;
+    private String subcategory;
 
-    public Product(Size size, @NotNull Outlet store, boolean inTransit) {
+    @Contract(pure = true)
+    public Product(){}
+
+    @Contract(pure = true)
+    public Product(long serialNo, String brand, String productName, Size size, Category category, String subcategory)
+    {
+        this.serialNo = serialNo;
+        this.brand = brand;
+        this.productName = productName;
         this.size = size;
-        this.store = store;
-        this.inTransit = inTransit;
+        this.category = category;
+        this.subcategory = subcategory;
     }
 
-    public Outlet getStore() {
-        return store;
+    public long getSerialNo()
+    {
+        return serialNo;
     }
 
-    public void setStore(Outlet store) {
-        this.store = store;
-    }
-
-    public boolean isInTransit() {
-        return inTransit;
-    }
-
-    public void setInTransit(boolean inTransit) {
-        this.inTransit = inTransit;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setSerialNo(long serialNo)
+    {
+        this.serialNo = serialNo;
     }
 
     public Size getSize() {
@@ -60,5 +65,45 @@ public class Product {
 
     public void setSize(Size size) {
         this.size = size;
+    }
+
+    public String getBrand()
+    {
+        return brand;
+    }
+
+    public void setBrand(String brand)
+    {
+        this.brand = brand;
+    }
+
+    public String getProductName()
+    {
+        return productName;
+    }
+
+    public void setProductName(String productName)
+    {
+        this.productName = productName;
+    }
+
+    public Category getCategory()
+    {
+        return category;
+    }
+
+    public void setCategory(Category category)
+    {
+        this.category = category;
+    }
+
+    public String getSubcategory()
+    {
+        return subcategory;
+    }
+
+    public void setSubcategory(String subcategory)
+    {
+        this.subcategory = subcategory;
     }
 }

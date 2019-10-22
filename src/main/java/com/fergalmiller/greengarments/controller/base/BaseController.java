@@ -1,4 +1,4 @@
-package com.fergalmiller.greengarments.controller.home;
+package com.fergalmiller.greengarments.controller.base;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class HomeController
+public class BaseController
 {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -15,4 +15,5 @@ public class HomeController
         return new ModelAndView("welcome")
                 .addObject("var", 1);
     }
+
 }

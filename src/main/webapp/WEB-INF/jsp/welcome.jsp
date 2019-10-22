@@ -5,5 +5,7 @@
 </head>
 <body>
 Welcome
+page cont: ${pageContext['request']}
+<a href="/product/list">click here</a>
 </body>
 </html>

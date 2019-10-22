@@ -1,5 +1,7 @@
 package com.fergalmiller.greengarments.model.outlet;
 
+import java.util.Map;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,6 +10,14 @@ public class Outlet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @ElementCollection
+    @MapKeyColumn(name = "serial_number")
+    @Column(name = "quantity")
+    @CollectionTable(
+                        name = "inventory",
+                        joinColumns = @JoinColumn(name = "outlet_id", referencedColumnName = "id"))
+    private Map<Long, Integer> inventory;
 
     @Column(nullable = false)
     private String location;
