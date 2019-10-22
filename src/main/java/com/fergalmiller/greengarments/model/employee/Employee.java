@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+import org.jetbrains.annotations.Contract;
+
 
 @Entity
 public class Employee {
@@ -22,12 +24,15 @@ public class Employee {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate startDate;
 
+    @Contract(pure = true)
+    public Employee(){}
+
+    @Contract(pure = true)
     public Employee(final String name, final int storeId, final LocalDate startDate) {
         this.name = name;
         this.storeId = storeId;
         this.startDate = startDate;
     }
-
 
     public int getId() {
         return id;

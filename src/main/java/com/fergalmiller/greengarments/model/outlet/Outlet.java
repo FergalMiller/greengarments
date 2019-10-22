@@ -4,6 +4,8 @@ import java.util.Map;
 
 import javax.persistence.*;
 
+import org.jetbrains.annotations.Contract;
+
 @Entity
 public class Outlet {
 
@@ -22,6 +24,10 @@ public class Outlet {
     @Column(nullable = false)
     private String location;
 
+    @Contract(pure = true)
+    public Outlet(){}
+
+    @Contract(pure = true)
     public Outlet(String location) {
         this.location = location;
     }
