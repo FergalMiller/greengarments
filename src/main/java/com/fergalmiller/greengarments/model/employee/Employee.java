@@ -7,7 +7,6 @@ import java.time.LocalDate;
 
 import org.jetbrains.annotations.Contract;
 
-
 @Entity
 public class Employee {
 

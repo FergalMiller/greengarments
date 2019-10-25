@@ -14,7 +14,7 @@ public class Outlet {
     private int id;
 
     @ElementCollection
-    @MapKeyColumn(name = "serial_number")
+    @MapKeyColumn(name = "product_serial_number")
     @Column(name = "quantity")
     @CollectionTable(
                         name = "inventory",
