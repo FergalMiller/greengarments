@@ -1,5 +1,48 @@
+:root{
+  --sidebar_margin_open:175px;
+  --sidebar_margin_closed:50px;
+}
+
 html{
   background-color: #f8decd;
+  font-family:  "Arial", serif;
+}
+
+.sidebar_menu{
+  height: 100%;
+  width:var(--sidebar_margin_open);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border: 2px grey;
+}
+
+.sidebar_toggle_button{
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+}
+
+.sidebar_logo_container{
+  position: absolute;
+  bottom: 0;
+}
+
+.sidebar_logo_container > img{
+  width:100%;
+}
+
+li:hover{
+  background-color: lightblue;
+}
+
+
+
+.main_content{
+  margin-left:var(--sidebar_margin_open);
 }
 
 .entity_list_table{
