@@ -8,15 +8,17 @@
 <c:set value="/resources/static/logo.png" var="staticLogo"/>
 
 <div class="sidebar_menu">
-    <button class="sidebar_toggle_button" onclick="toggleSidebarMenu()">☰ Menu</button>
-    <div class="sidebar_links">
-        <ul>
-            <li><a href="${productLink}">Product management</a></li>
-            <li><a href="${outletLink}">Outlet management</a></li>
-            <li><a href="${employeeLink}">Employee management</a></li>
+    <button class="sidebar_toggle_button" onclick="toggleSidebarMenu()">☰ Hide menu</button>
+    <div class="sidebar_link_container">
+        <ul class="sidebar_link_list">
+            <li class="sidebar_link"><a href="${productLink}">Product management</a></li>
+            <li class="sidebar_link"><a href="${outletLink}">Outlet management</a></li>
+            <li class="sidebar_link"><a href="${employeeLink}">Employee management</a></li>
         </ul>
     </div>
     <div class="sidebar_logo_container">
-        <img src="${staticLogo}" alt="GG Logo"/>
+        <a href="${pageContext.request.contextPath}/">
+            <img src="${staticLogo}" alt="GG Logo" class="sidebar_logo_image"/>
+        </a>
     </div>
 </div>

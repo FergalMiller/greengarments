@@ -57,5 +57,7 @@ public class GreenGarmentsConfig implements WebMvcConfigurer
     {
         registry.addResourceHandler("/resources/**")
                 .addResourceLocations("/resources/");
+        registry.addResourceHandler("/favicon.ico")
+                .addResourceLocations("/resources/static/");
     }
 }
