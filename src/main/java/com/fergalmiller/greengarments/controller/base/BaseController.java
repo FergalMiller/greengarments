@@ -16,4 +16,9 @@ public class BaseController
                 .addObject("var", 1);
     }
 
+    @RequestMapping(value = "/dialog")
+    public ModelAndView dialog()
+    {
+        return new ModelAndView("core/dialog");
+    }
 }

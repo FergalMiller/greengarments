@@ -18,7 +18,7 @@
     </h1>
 
     <table class="control_bar">
-        <td><a href="${creationFormLink}">Create new Product</a></td>
+        <tr><td><a href="${creationFormLink}">Create new Product</a></td></tr>
     </table>
 
     <table class="entity_list_table">
@@ -37,6 +37,9 @@
             </tr>
         </c:forEach>
     </table>
+    <button onclick="openDialog('${creationFormLink}')">
+        Open creation form dialog
+    </button>
 </div>
 </body>
 </html>
