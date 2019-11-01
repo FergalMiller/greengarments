@@ -72,8 +72,6 @@ li:hover{
   background-color: lightblue;
 }
 
-
-
 .main_content{
   margin-left:var(--sidebar_margin_open);
 }
@@ -81,4 +79,24 @@ li:hover{
 .entity_list_table{
   background-color: #f7f8f2;
   margin: 10px;
+}
+
+.creation_form_container{
+  margin: 5px;
+  width: 75%;
+  text-align: center;
+}
+
+.creation_form_table{
+  display: inline-block;
+}
+
+.creation_form_table > tbody > tr{
+  border-bottom: 1px black;
+=}
+
+.creation_form_table > tbody > tr > td {
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
 }
