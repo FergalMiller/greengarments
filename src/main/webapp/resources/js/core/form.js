@@ -2,8 +2,6 @@ function setupForm(formName, postUrl, onSuccessUrl, isDialogContent)
 {
     $('#' + formName + 'Form').on('submit', function()
     {
-        console.log($(this));
-        console.log($(this).serialize());
         $.ajax({
             url : postUrl,
             type : 'POST',
