@@ -1,0 +1,9 @@
+/*
+Used to contain all scss style sheets.
+
+Whenever a new .scss file is created remember to import it into this file to ensure it is compiled.
+*/
+
+@import "core/main";
+@import "core/sidebar";
+@import "core/dialog";

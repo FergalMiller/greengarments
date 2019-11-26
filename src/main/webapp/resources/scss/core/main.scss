@@ -8,66 +8,6 @@ html{
   font-family:  "Arial", serif;
 }
 
-.sidebar_menu{
-  height: 100%;
-  width:var(--sidebar_margin_open);
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #8bb396;
-  border: 2px grey;
-}
-
-.sidebar_toggle_button{
-  text-align: center;
-  width: 100%;
-  height: 50px;
-  background-color: #8bb396;
-  border: 2px #09cf02;
-}
-
-.sidebar_link_list {
-  list-style-type: none;
-  padding-inline-start: 0 !important;
-}
-
-.sidebar_link {
-  text-align: center;
-  width: 100%;
-  text-decoration: none;
-  -o-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
-
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.sidebar_link > a{
-  display: block;
-  color: black;
-}
-
-.sidebar_logo_container{
-  position: absolute;
-  bottom: 0;
-}
-
-.sidebar_logo_image{
-  width:100%;
-
-  border-radius: 50%;
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition:         transform .4s ease-in-out;
-}
-
-.sidebar_logo_image:hover{
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-
 li:hover{
   background-color: lightblue;
 }
@@ -93,24 +33,10 @@ li:hover{
 
 .creation_form_table > tbody > tr{
   border-bottom: 1px black;
-=}
+}
 
 .creation_form_table > tbody > tr > td {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
-}
-
-.dialog{
-  display: block;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  position: fixed;
-  z-index: 1;
-  overflow: auto;
-  background-color: rgb(255,255,255);
-
-  box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
 }
