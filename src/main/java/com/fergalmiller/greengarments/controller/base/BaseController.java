@@ -15,15 +15,9 @@ public class BaseController
                 .addObject("var", 1);
     }
 
-    @RequestMapping(value = "/decorator/common")
-    public String commonDecorator()
-    {
-        return "core/decorator-common";
-    }
-
     @RequestMapping(value = "/dialog")
-    public ModelAndView dialog()
+    public String dialog()
     {
-        return new ModelAndView("core/dialog");
+        return "core/dialog";
     }
 }
