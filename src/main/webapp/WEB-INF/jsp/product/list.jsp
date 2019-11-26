@@ -7,18 +7,22 @@
 
 <html>
 <head>
-    <jsp:include page="../core/import-include.jsp"/>
     <title><spring:message key="products.title"/></title>
 </head>
 <body>
-<jsp:include page="../core/sidebar-menu.jsp"/>
 <div class="main_content">
     <h1>
         <spring:message key="products.title"/>
     </h1>
 
     <table class="control_bar">
-        <tr><td><a href="${creationFormLink}">Create new Product</a></td></tr>
+        <tr>
+            <td>
+                <button onclick="openDialog('${creationFormLink}')">
+                    Open creation form dialog
+                </button>
+            </td>
+        </tr>
     </table>
 
     <table class="entity_list_table">
@@ -37,9 +41,7 @@
             </tr>
         </c:forEach>
     </table>
-    <button onclick="openDialog('${creationFormLink}')">
-        Open creation form dialog
-    </button>
+
 </div>
 </body>
 </html>

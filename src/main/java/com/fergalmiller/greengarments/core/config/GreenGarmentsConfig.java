@@ -5,6 +5,7 @@ import javax.annotation.Nonnull;
 
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -34,6 +35,15 @@ public class GreenGarmentsConfig implements WebMvcConfigurer
         ServletRegistrationBean registrationBean = new ServletRegistrationBean( new org.h2.server.web.WebServlet());
         registrationBean.addUrlMappings("/admin/*");
         return registrationBean;
+    }
+
+    @Bean
+    public FilterRegistrationBean siteMeshFilter()
+    {
+        final FilterRegistrationBean<WebSiteMeshFilter> filter = new FilterRegistrationBean<>();
+        final WebSiteMeshFilter siteMeshFilter = new WebSiteMeshFilter();
+        filter.setFilter(siteMeshFilter);
+        return filter;
     }
 
     @Override
