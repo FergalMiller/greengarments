@@ -40,8 +40,8 @@ public class GreenGarmentsConfig implements WebMvcConfigurer
     @Bean
     public FilterRegistrationBean siteMeshFilter()
     {
-        final FilterRegistrationBean<WebSiteMeshFilter> filter = new FilterRegistrationBean<>();
-        final WebSiteMeshFilter siteMeshFilter = new WebSiteMeshFilter();
+        final FilterRegistrationBean<CustomSiteMeshFilter> filter = new FilterRegistrationBean<>();
+        final CustomSiteMeshFilter siteMeshFilter = new CustomSiteMeshFilter();
         filter.setFilter(siteMeshFilter);
         return filter;
     }
